@@ -1,0 +1,3 @@
+The Python file is an NBA basketball game simulation based on real-time data provided by ESPN.com and NBA.com. The file contains multiple functions that can be used independently. For example, nSims(m,'Team1','Team2') will simulate a game between Team1 and Team2 m times and return three outputs: the average score for Team1, the average score for Team2, and the difference between these averages. Team names for Team1 and Team2 should be entered by city-- e.g. nSims(10,'Boston','Atlanta'), unless the teams are the Clippers or the Lakers in which case 'Lakers' or 'Clippers' should be entered.
+
+The most powerful function is the TableSims(m,k) function, which returns a table containing the average scores from k simulations each of the first m NBA games listed on Bovada. 
