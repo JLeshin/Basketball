@@ -44,14 +44,17 @@ with requests.Session() as session:
     }
 
     response = session.get('http://stats.nba.com/stats/leaguedashteamstats', params=params)
-    results = response.json()
-    headers = results['resultSets'][0]['headers']
-    rows = results['resultSets'][0]['rowSet']
-
     
-    dataNBAadv=pd.DataFrame(rows)
-    dataNBAadv.columns=['a','b','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a']
-    #print dataNBAadv
+results = response.json()
+headers = results['resultSets'][0]['headers']
+rows = results['resultSets'][0]['rowSet']
+dataNBAadv=pd.DataFrame(rows)
+
+#Rename columns so that we can easily grab second column:
+def col_rename()
+dataNBAadv.columns = ['a']*df.shape(dataNBAadv)[1]
+['a','b','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a']
+#print dataNBAadv
 
     
 
