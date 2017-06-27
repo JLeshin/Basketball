@@ -50,12 +50,6 @@ headers = results['resultSets'][0]['headers']
 rows = results['resultSets'][0]['rowSet']
 dataNBAadv=pd.DataFrame(rows)
 
-#Rename columns so that we can easily grab second column:
-def col_rename()
-dataNBAadv.columns = ['a']*df.shape(dataNBAadv)[1]
-['a','b','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a']
-#print dataNBAadv
-
     
 
 url = "http://stats.nba.com/league/team/#!/misc/"
@@ -99,8 +93,7 @@ with requests.Session() as session:
 
     
     dataNBAmisc=pd.DataFrame(rows)
-    dataNBAmisc.columns=['a','b','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a']
-   # print dataNBAmisc
+
 
 
 from bs4 import BeautifulSoup 
@@ -298,14 +291,14 @@ def WebSim(Team1, Team2):
     source1T1=data1[data1['TEAM'].str.contains(Team1)].values
     source2T1=data2[data2['TEAM'].str.contains(Team1)].values
     source3T1=data3[data3['TEAM'].str.contains(Team1)].values
-    source1NBAT1=dataNBAadv[dataNBAadv['b'].str.contains(Team1)].values
-    source2NBAT1=dataNBAmisc[dataNBAmisc['b'].str.contains(Team1)].values
+    source1NBAT1=dataNBAadv[dataNBAadv.iloc[:,1].str.contains(Team1)].values
+    source2NBAT1=dataNBAmisc[dataNBAmisc.iloc[:,1].str.contains(Team1)].values
     
     source1T2=data1[data1['TEAM'].str.contains(Team2)].values
     source2T2=data2[data2['TEAM'].str.contains(Team2)].values
     source3T2=data3[data3['TEAM'].str.contains(Team2)].values
-    source1NBAT2=dataNBAadv[dataNBAadv['b'].str.contains(Team2)].values
-    source2NBAT2=dataNBAmisc[dataNBAmisc['b'].str.contains(Team2)].values
+    source1NBAT2=dataNBAadv[dataNBAadv.iloc[:,1].str.contains(Team2)].values
+    source2NBAT2=dataNBAmisc[dataNBAmisc.iloc[:,1].str.contains(Team2)].values
     
     #We define the following quantities from our source vectors that will be used in the simulation.
 
